@@ -30,7 +30,13 @@ bantime  = 2592000
 findtime = 86400   ; 1 day
 maxretry = 3
 ```
+Copy this file :
+```
+cp /etc/fail2ban/filter.d/scanban-filter.conf /etc/fail2ban/filter.d/scanban.conf
+```
+
 Top 10 detected ip and port count:
 ```
 cat /var/log/iptables.log| sed -r 's/.*SRC=(\S+).*PROTO=(\S+).*DPT=(\S+).*/\1 \2 \3/' | sort | uniq -c | sort -r -n|head -n 10
 ```
+
